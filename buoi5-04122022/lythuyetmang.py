@@ -8,6 +8,7 @@ for diem in diemsohocsinh:
 #cach 2
 mangten = ["danh", "hieu", "hoang", "trung"]
 
+
 for vitri, ten in enumerate(mangten):
     print("vi tri thu: ", vitri)
     print("ten la: ", ten)
