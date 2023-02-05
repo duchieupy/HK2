@@ -1,11 +1,10 @@
 #cho mang chua cac quan bai
-quanbaiHieu = ["J","4","2"]
-quanbaiCau = ["J","4","2"]
+quanbaiHieu = ["J","A"]
+quanbaiCau = ["J","K","2"]
 tongdiemhieu = 0
 tongdiemcau = 0
-tongquanbaihieu = 0
-tongquanbaicau = 0
-def tinhdiemquanbai(quanbai):
+
+def tinhdiemquanbai(quanbai, soluongquanbai):
     match quanbai:
         case "2":
             return 2
@@ -23,31 +22,30 @@ def tinhdiemquanbai(quanbai):
             return 8
         case "9":
             return 9
-        case "10" | "J"| "Q"| "K"| "A":
+        case "10" | "J"| "Q"| "K":
             return 10
+        case "A":
+            if(soluongquanbai>3):
+                return 1
+            else:
+                return 10
 
-
+soluongquanbai = len(quanbaiHieu)
 for bai in quanbaiHieu:
-    tongquanbaihieu = tongquanbaihieu + 1
-    if  tongquanbaihieu > 3 :
-        bai == "A"
-        tongdiemhieu = tongdiemhieu + 1
-        diemcuatungquanbai = tinhdiemquanbai(bai)
-        tongdiemhieu=tongdiemhieu+diemcuatungquanbai
+    diemcuatungquanbai = tinhdiemquanbai(bai, soluongquanbai)
+    tongdiemhieu=tongdiemhieu+diemcuatungquanbai
 
 print ( " tong diem quan bai cua hieu la" , tongdiemhieu)
 
+soluongquanbaiCau = len(quanbaiCau)
 for bai in quanbaiCau:
-    tongquanbaicau = tongquanbaicau + 1
-    if tongquanbaicau > 3  and bai == "A":
-        tongdiemcau = tongdiemcau + 1
-    diemcuatungquanbai = tinhdiemquanbai(bai)
+    diemcuatungquanbai = tinhdiemquanbai(bai, soluongquanbaiCau)
     tongdiemcau=tongdiemcau+diemcuatungquanbai
 
 print ( " tong diem quan bai cua cau la" , tongdiemcau)
 
 # Tim xem ai thang?
-if tongdiemhieu == tongdiemcau and tongdiemhieu >= 22 or tongdiemcau >=22 :
+if tongdiemhieu == tongdiemcau or tongdiemhieu >= 22 and tongdiemcau >=22 :
     print(" hoa ")
 else:
     if tongdiemhieu > tongdiemcau and tongdiemhieu <= 22 :

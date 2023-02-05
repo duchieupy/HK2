@@ -1,5 +1,5 @@
 #cho mang chua cac quan bai
-quanbaiHieu = ["J","10","K"]
+quanbaiHieu = ["J","4","2"]
 quanbaiCau = ["J","4","2"]
 tongdiemhieu = 0
 tongdiemcau = 0
