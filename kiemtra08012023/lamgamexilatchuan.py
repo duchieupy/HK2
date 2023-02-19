@@ -1,11 +1,11 @@
 #cho mang chua cac quan bai
-quanbaiHieu = ["A","Q"]
-quanbaiCau = ["A","K"]
+quanbaiHieu = ["8","9"]
+quanbaiCau = ["3","K"]
 
 #tinh diem tat ca quan bai cua nguoi choi tra ve diem
 def tinhdiemtoanboquanbai(toanboquanbai):
     soluongquanbai = len(toanboquanbai)
-
+    tongdiem=0
     match soluongquanbai:
         case 2:
             #xi vang
@@ -15,8 +15,28 @@ def tinhdiemtoanboquanbai(toanboquanbai):
             if (toanboquanbai == ["A","J"] ) or (toanboquanbai == ["A","K"] )or (toanboquanbai == ["A","Q"]) or (toanboquanbai == ["A","10"]):
                 return 52
             #binh thuong
-            
-                return "sap win"
+            else:
+                for bai in toanboquanbai:
+                    if bai == "2":
+                        tongdiem=tongdiem+2
+                    if bai == "3":
+                        tongdiem=tongdiem+3
+                    if bai == "4":
+                        tongdiem=tongdiem+4
+                    if bai == "5":
+                        tongdiem=tongdiem+5
+                    if bai == "6":
+                        tongdiem=tongdiem+6
+                    if bai == "7":
+                        tongdiem=tongdiem+7
+                    if bai == "8":
+                        tongdiem=tongdiem+8
+                    if bai == "9":
+                        tongdiem=tongdiem+9
+                    if bai == "10" or bai == "J" or bai == "Q" or bai == "K" or bai == "A":
+                        tongdiem=tongdiem+10
+
+                return tongdiem
         case 3:
             return 3
         case 4:
