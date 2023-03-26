@@ -1,10 +1,25 @@
-#cho mang chua cac qua, "Q"n bai
-quanbaiHieu = ["10","5","6"]
-quanbaiCau = ["10","2","3","A","A"]
+import random
 
-tiencau=100
-tienHieu=50
-datcuoc=2
+#cho mang chua cac qua, "Q"n bai
+quanbaiHieu = []
+quanbaiCau = []
+
+# chay ham ngau nhien => lay duoc so ngau nhien
+soluongquanbairandomHieu = random.randint(2, 5)
+soluongquanbairandomCau = random.randint(2, 5)
+
+
+for i in range(soluongquanbairandomHieu):
+    conbaiRandom = str(random.randint (2,10))
+    quanbaiHieu.append(conbaiRandom) 
+
+
+print("quan bai của hieu", quanbaiHieu)
+for i in range(soluongquanbairandomCau):
+    conbaiRandom = str(random.randint(2,10))
+    quanbaiCau.append(conbaiRandom)
+
+print(" quan bai cua cau", quanbaiCau)
 
 #tinh diem tat ca quan bai cua nguoi choi tra ve diem
 def tinhdiemtoanboquanbai(toanboquanbai):
