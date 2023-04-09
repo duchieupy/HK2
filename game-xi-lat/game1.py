@@ -2,24 +2,50 @@ import random
 
 #cho mang chua cac qua, "Q"n bai
 quanbaiHieu = []
-quanbaiCau = []
+quanbaiCau  = []
 
 # chay ham ngau nhien => lay duoc so ngau nhien
 soluongquanbairandomHieu = random.randint(2, 5)
-soluongquanbairandomCau = random.randint(2, 5)
+soluongquanbairandomCau  = random.randint(2, 5)
 
-
+# tao ramdom quan bai cua Hieu
+# random.randint (2,10) ranndom 1 so tu 2 toi 10
 for i in range(soluongquanbairandomHieu):
-    conbaiRandom = str(random.randint (2,10))
+    conbaiso = random.randint(1,13)
+    if(conbaiso==1):
+        conbaiRandom = 'A'
+    elif(conbaiso== 11):
+        conbaiRandom = 'J'
+    elif (conbaiso == 12):
+        conbaiRandom = 'Q'
+    elif (conbaiso == 13):
+        conbaiRandom = 'K'
+    else:
+        conbaiRandom = str(conbaiso)
+    
     quanbaiHieu.append(conbaiRandom) 
 
-
 print("quan bai của hieu", quanbaiHieu)
+
+# tao random quan bai cua Cau
 for i in range(soluongquanbairandomCau):
-    conbaiRandom = str(random.randint(2,10))
+    # random.randint(1,13)1=>A 2 3 4 5 6 7 8 9 10 11 => J 12=>Q 13=>K
+    conbaiso = random.randint(1,13)
+
+    if(conbaiso==1):
+        conbaiRandom = 'A'
+    elif(conbaiso== 11):
+        conbaiRandom = 'J'
+    elif (conbaiso == 12):
+        conbaiRandom = 'Q'
+    elif (conbaiso == 13):
+        conbaiRandom = 'K'
+    else:
+        conbaiRandom = str(conbaiso)
+
     quanbaiCau.append(conbaiRandom)
 
-print(" quan bai cua cau", quanbaiCau)
+print("quan bai cua cau", quanbaiCau)
 
 #tinh diem tat ca quan bai cua nguoi choi tra ve diem
 def tinhdiemtoanboquanbai(toanboquanbai):
@@ -127,9 +153,9 @@ def tinhdiemtoanboquanbai(toanboquanbai):
                     tongdiem=tongdiem+10
 
             if(tongdiem < 22):
-                return 51
+                return 51 # NGU lINH
             else:
-                return 22 
+                return 22 # woac
             
 #ai cao diem hon thi in ra
 diemcuaHieu = tinhdiemtoanboquanbai(quanbaiHieu)
@@ -138,16 +164,15 @@ print("diem cua Hieu la", diemcuaHieu)
 print("diem cua Cau la", diemcuacau)
 
 
-
 # neu cau woac
 if (diemcuacau > 21 and diemcuacau < 50):
     if(diemcuaHieu >21 and diemcuaHieu < 50 ):
-        print ( " hoa")
+        print ( "hoa")
     else:
         print ( "con thang cau")
 else:
     if (diemcuaHieu > 21 and diemcuaHieu < 50) :
-        print( " cau thang con")
+        print( "cau thang con")
     else:
         if diemcuaHieu > diemcuacau :
             print ( "con thang cau")
