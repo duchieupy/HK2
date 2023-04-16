@@ -4,6 +4,15 @@ import random
 quanbaiHieu = []
 quanbaiCau  = []
 
+tiencau=100
+tienHieu=100
+datcoc=20
+
+# yeu cau
+# ai thang thi cong len 20
+# thua thi tru 20
+# hoa thi ko ai bi tru tien va cong tien
+
 # chay ham ngau nhien => lay duoc so ngau nhien
 soluongquanbairandomHieu = random.randint(2, 5)
 soluongquanbairandomCau  = random.randint(2, 5)
@@ -45,7 +54,6 @@ for i in range(soluongquanbairandomCau):
 
     quanbaiCau.append(conbaiRandom)
 
-print("quan bai cua cau", quanbaiCau)
 
 #tinh diem tat ca quan bai cua nguoi choi tra ve diem
 def tinhdiemtoanboquanbai(toanboquanbai):
@@ -57,8 +65,10 @@ def tinhdiemtoanboquanbai(toanboquanbai):
             if toanboquanbai == ["A","A"]:
                 return 53
             #xi lat
-            if (toanboquanbai == ["A","J"] ) or (toanboquanbai == ["A","K"] )or (toanboquanbai == ["A","Q"]) or (toanboquanbai == ["A","10"]):
+            if (toanboquanbai == ["A","J"]) or (toanboquanbai == ["A","K"] )or (toanboquanbai == ["A","Q"]) or (toanboquanbai == ["A","10"]):
                 return 52
+            # if (toanboquanbai == ["J","A"]) or (toanboquanbai == ["K","A"] )or (toanboquanbai == ["Q","A"]) or (toanboquanbai == ["10","A"]):
+                # return 52
             #binh thuong
             else:
                 for bai in toanboquanbai:
@@ -167,18 +177,39 @@ print("diem cua Cau la", diemcuacau)
 # neu cau woac
 if (diemcuacau > 21 and diemcuacau < 50):
     if(diemcuaHieu >21 and diemcuaHieu < 50 ):
+        print(" tiền cậu là ", tiencau)
+        print("tiền hiếu là ", tienHieu)
         print ( "hoa")
     else:
+        tiencau = tiencau - datcoc
+        tienHieu= tienHieu + datcoc
+        print(" tien cau la ",tiencau)
+        print(" tien cua hieu là", tienHieu)
         print ( "con thang cau")
+
 else:
     if (diemcuaHieu > 21 and diemcuaHieu < 50) :
-        print( "cau thang con")
+        tiencau = tiencau + datcoc
+        tienHieu = tienHieu - datcoc
+        print("tien cau là",tiencau)
+        print (" tiền hieu là",tienHieu)
+        print( "cau thang con",)
+
     else:
         if diemcuaHieu > diemcuacau :
+            tiencau = tiencau - datcoc
+            tienHieu = tienHieu+ datcoc
+            print("tien cau là",tiencau)
+            print (" tiền hieu là",tienHieu)
             print ( "con thang cau")
         elif diemcuaHieu < diemcuacau :
+            tiencau = tiencau + datcoc
+            tienHieu = tienHieu -  datcoc
             print (" con thua cau") 
+
         else:
+            print(" tiền cậu là ", tiencau)
+            print("tiền hiếu là ", tienHieu)
             print ("hoa")
 
 
